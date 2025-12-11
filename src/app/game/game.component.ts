@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForOf, NgIf, NgStyle} from '@angular/common';
 import { Game } from '../../models/game';
+import { PlayerComponent } from '../player/player.component';
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [NgForOf, NgIf, NgStyle],
+  imports: [NgForOf, NgIf, NgStyle, PlayerComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
