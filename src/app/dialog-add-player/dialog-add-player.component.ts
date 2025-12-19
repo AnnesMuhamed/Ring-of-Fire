@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -13,13 +13,13 @@ import { A11yModule } from '@angular/cdk/a11y';
   templateUrl: './dialog-add-player.component.html',
   styleUrl: './dialog-add-player.component.scss'
 })
-export class DialogAddPlayerComponent {
+export class DialogAddPlayerComponent implements OnInit {
   name: string = '';
 
   constructor(
-    public dialogRef: MatDialogRef<DialogAddPlayerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+    public dialogRef: MatDialogRef<DialogAddPlayerComponent>) {}
+
+  ngOnInit(): void {}
 
   onNoClick(): void {
     this.dialogRef.close();
